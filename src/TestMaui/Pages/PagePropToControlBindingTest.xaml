@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:TestMaui.Controls"
+             x:Class="TestMaui.PagePropToControlBindingTest"
+             Title="PagePropToControlBindingTest">
+    <ContentPage.Resources>
+        <Style x:Key="start" TargetType="ContentView">
+            <Setter Property="VerticalOptions" Value="Start" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+        </Style>
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+
+        <controls:CustomControlBindingTest x:Name="customControl"
+            Tag="{Binding Current}"
+            Style="{StaticResource start}"
+            />
+
+        <Entry x:Name="entry"
+               Style="{StaticResource start}"
+               />
+
+        <Label x:Name="simpleLabel"
+               Text="{Binding Current}"
+               Style="{StaticResource start}"
+               />
+
+        <Button Clicked="Test"/>
+        
+    </VerticalStackLayout>
+</ContentPage>

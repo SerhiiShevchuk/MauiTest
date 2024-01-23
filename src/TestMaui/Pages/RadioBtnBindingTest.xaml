@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestMaui.Pages.RadioBtnBindingTest"
+             Title="RadioBtnBindingTest">
+
+    <StackLayout>
+        <Label Text="Simple Test:"/>
+        <StackLayout RadioButtonGroup.GroupName="{Binding GroupName}"
+                 RadioButtonGroup.SelectedValue="{Binding Selection, Mode=TwoWay}">
+            <Label Text="What's your favorite animal?" />
+            <RadioButton Content="Dog"
+                     Value="{Binding FirstItem, Mode=TwoWay}" />
+            <RadioButton Content="Cet"
+                     Value="{Binding SecondItem, Mode=TwoWay}" />
+            <Label x:Name="animalLabel">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="You have chosen:" />
+                        <Span Text="{Binding Selection}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+        
+        <Label Text="Model Test:"/>
+        <StackLayout  BackgroundColor="Gray"
+                 RadioButtonGroup.GroupName="{Binding TestModel.GroupName}"
+                 RadioButtonGroup.SelectedValue="{Binding TestModel.Selection}">
+            <RadioButton Content="{Binding TestModel.FirstItem.Value}"
+                     Value="{Binding TestModel.FirstItem}" />
+            <RadioButton Content="{Binding TestModel.SecondItem.Value}"
+                     Value="{Binding TestModel.SecondItem}" />
+            <Label x:Name="selectedModelLabel">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="You have chosen:" />
+                        <Span Text="{Binding TestModel.Selection.Value}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+
+    </StackLayout>
+
+
+    <!--<VerticalStackLayout>
+
+        --><!--<RadioButton Content="Elephant"
+                 Value="Elephant" />
+            <RadioButton Content="Monkey"
+                 Value="Monkey"/>-->
+            
+            
+            <!--RadioButtonGroup.GroupName="States"
+                    RadioButtonGroup.SelectedValue="{Binding TaskVisualState}"-->
+
+            <!--<CollectionView  
+ 
+                    BackgroundColor="White"
+                    ItemsSource="{Binding Models}"
+                    SelectionMode="None"
+>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+
+                            <RadioButton 
+                                    Content="{Binding Value}"
+                                    TextColor="Black"
+                                    Value="{Binding}"
+                                    HorizontalOptions="Center"/>
+
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>--><!--
+                <Label x:Name="animalLabel">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="You have chosen:" />
+                        <Span Text="{Binding SelectedModel.Value}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            
+        </StackLayout>
+    </VerticalStackLayout>-->
+</ContentPage>

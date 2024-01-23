@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestMaui.Pages.RadioButtonControlTemplateTest"
+             Title="RadioButtonControlTemplateTest">
+    <VerticalStackLayout>
+
+
+        <Grid ColumnDefinitions="*,*">
+
+            <Button BackgroundColor="Black"/>
+            <Button BackgroundColor="Red" Grid.Column="1"/>
+            
+            <!--<BindableLayout.ItemTemplate>
+
+            </BindableLayout.ItemTemplate>
+
+            <BindableLayout.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Hot Dishes</x:String>
+                    <x:String>Cold Dishes</x:String>
+                </x:Array>
+            </BindableLayout.ItemsSource>-->
+
+        </Grid>
+
+        <FlexLayout>
+
+            <Button BackgroundColor="Black"/>
+            <Button BackgroundColor="Red" Grid.Column="1"/>
+            
+        </FlexLayout>
+    </VerticalStackLayout>
+</ContentPage>

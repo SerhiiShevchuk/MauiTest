@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
+             x:Class="TestMaui.Pages.ConfettiTestPage">
+
+
+    <!--<AbsoluteLayout>
+        --><!--<Rectangle 
+           BackgroundColor="Red"
+           AbsoluteLayout.LayoutBounds="0,0,1,1"
+           AbsoluteLayout.LayoutFlags="All"
+           Fill="Red"
+           Scale="2" />--><!--
+
+        <skia:SKConfettiView x:Name="confettiView"
+           AbsoluteLayout.LayoutBounds="0,0,0.5,0.5"
+           AbsoluteLayout.LayoutFlags="All"
+           HeightRequest="800"
+                             />
+
+
+    </AbsoluteLayout>-->
+    <VerticalStackLayout>
+        
+        <Button Text="OnAnimationEnabled" Pressed="OnAnimationEnabled" BackgroundColor="Blue"/>
+        <Button Text="OffAnimationEnabled" Pressed="OffAnimationEnabled" BackgroundColor="Purple"/>
+
+        <skia:SKLottieView
+                    x:Name="SKLottieView_1"
+                    BackgroundColor="Yellow"
+                    HeightRequest="200"
+                    Source="common_confetti.json"
+
+                    Margin="0,0,0,50"
+                    />
+
+        <skia:SKLottieView
+                    BackgroundColor="Red"
+                    HeightRequest="200"
+                    Source="common_confetti.json"
+                    InputTransparent="False"
+                    IsAnimationEnabled="False"
+                    Margin="0,0,0,50"
+                    >
+            <skia:SKLottieView.Scale>
+                <OnPlatform x:TypeArguments="system:Double">
+                    <On Platform="Android" Value="2.8"/>
+                    <On Platform="iOS" Value="1.8"/>
+                </OnPlatform>
+            </skia:SKLottieView.Scale>
+
+        </skia:SKLottieView>
+
+        <skia:SKLottieView
+                    HeightRequest="200"
+                    Source="common_confetti.json"
+                    RepeatCount="1"
+                    InputTransparent="False"
+                    IsAnimationEnabled="True"
+                    BackgroundColor="Green"
+            
+                    >
+        </skia:SKLottieView>
+        
+    </VerticalStackLayout>
+</ContentPage>

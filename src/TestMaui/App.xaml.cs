@@ -9,7 +9,7 @@ namespace TestMaui
         {
             InitializeComponent();
 
-            MainPage = new MainNavigatonPage();
+            MainPage = new NavigationPage(new MainNavigatonPage());
         }
     }
 }

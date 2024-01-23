@@ -9,9 +9,14 @@ public partial class NavigationPage2 : ContentPage
 
     private async void OnNavigate(object sender, EventArgs e)
     {
-		await Navigation.PopModalAsync();
+        var modalStack = Navigation.ModalStack;
+        var NavigationStack = Navigation.NavigationStack;
 
-		var modalStack = Navigation.ModalStack;
-		var NavigationStack = Navigation.NavigationStack;
+        await Navigation.PopModalAsync();
+
+        await Navigation.PopToRootAsync();
+
+		modalStack = Navigation.ModalStack;
+		NavigationStack = Navigation.NavigationStack;
     }
 }
